@@ -11,6 +11,31 @@ namespace Disaheim;
 
 public class Utility
 {
+    public double GetValueOfMerchandise(Merchandise merchandise) 
+    {
+        
+        if (merchandise is Amulet amulet) 
+        {
+            switch (amulet.Quality)
+            {
+                case Level.low: return 12.5;
+                    break;
+                case Level.medium: return 20.0;
+                    break;
+                case Level.high: return 27.5;
+                default: return 0.0;
+                    break;
+            }
+        }
+        if (merchandise is Book book) 
+        {
+            return book.Price;
+        }
+        return 0.0;
+    }
+    
+    
+    
     public double GetValueOfBook(Book book)
     {
         return book.Price;
