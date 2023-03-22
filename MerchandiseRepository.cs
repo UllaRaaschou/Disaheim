@@ -25,12 +25,13 @@ namespace Disaheim
         }
         Utility utilityObject = new Utility();
         double totalValue = 0;
-        public double GettotalValue() 
+        public double GetTotalValue() 
         {
             foreach  (Merchandise merchandise in _merchandises)
             {
                 totalValue += utilityObject.GetValueOfMerchandise(merchandise);
             }
+            return totalValue;
             return 0.0;
         }
     }

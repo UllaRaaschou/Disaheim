@@ -11,6 +11,13 @@ namespace Disaheim;
 
 public class Utility
 {
+   
+    public double LowQualityValue { get; set; } = 12.5;
+    public double MediumQualityValue { get; set; } = 20.0;
+    public double HighQualityValue { get; set; } = 27.5;
+
+    public double CourseHourValue { get; set; } = 875.0;
+    
     public double GetValueOfMerchandise(Merchandise merchandise) 
     {
         
@@ -56,8 +63,8 @@ public class Utility
         int modulus = course.DurationInMinutes % 60;
         switch (modulus)
         {
-            case 0: return fullHours * 875;
-            default: return (fullHours + 1) * 875;
+            case 0: return fullHours * CourseHourValue;
+            default: return (fullHours + 1) * CourseHourValue;
         }
     }
 }
